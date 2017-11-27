@@ -1,0 +1,7 @@
+#skin {
+	background:url('skin-black.jpg'); position:relative; width:768px; height:1498px;
+}
+
+#screen {
+	position:absolute; top:272px; left:65px; width:640px; height:960px;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="iOSTS"
+  id="myeclipse.1329310032939"
+  context-root="/iOS"
+  j2ee-spec="5.0"
+  archive="iOSTS.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

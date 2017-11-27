@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<listener>
+		<listener-class>molab.servlet.LoadOnStartup</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<!-- Basic Login Servlet -->
+	<servlet>
+		<description>Login servlet.</description>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>net.sourceforge.guacamole.net.basic.BasicLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<!-- Basic Logout Servlet -->
+	<servlet>
+		<description>Logout servlet.</description>
+		<servlet-name>Logout</servlet-name>
+		<!--
+			<servlet-class>net.sourceforge.guacamole.net.basic.BasicLogout</servlet-class>
+		-->
+		<servlet-class>logout.jsp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+
+	<!-- Configuration List Servlet -->
+	<servlet>
+		<description>Configuration list servlet.</description>
+		<servlet-name>Configs</servlet-name>
+		<servlet-class>net.sourceforge.guacamole.net.basic.ConfigurationList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Configs</servlet-name>
+		<url-pattern>/configs</url-pattern>
+	</servlet-mapping>
+
+	<!-- Guacamole Tunnel Servlet -->
+	<servlet>
+		<description>Tunnel servlet.</description>
+		<servlet-name>Tunnel</servlet-name>
+		<servlet-class>net.sourceforge.guacamole.net.basic.BasicGuacamoleTunnelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Tunnel</servlet-name>
+		<url-pattern>/tunnel</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ApplyLock</servlet-name>
+		<servlet-class>molab.servlet.ApplyLock</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdateLefttime</servlet-name>
+		<servlet-class>molab.servlet.user.UpdateLefttime</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpProgress</servlet-name>
+		<servlet-class>molab.servlet.UpProgress</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Upfiles</servlet-name>
+		<servlet-class>molab.servlet.Upfiles</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AppManager</servlet-name>
+		<servlet-class>molab.servlet.AppManager</servlet-class>
+	</servlet>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>ApplyLock</servlet-name>
+		<url-pattern>/servlet/ApplyLock</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateLefttime</servlet-name>
+		<url-pattern>/servlet/user/UpdateLefttime</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpProgress</servlet-name>
+		<url-pattern>/servlet/UpProgress</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Upfiles</servlet-name>
+		<url-pattern>/servlet/Upfiles</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AppManager</servlet-name>
+		<url-pattern>/servlet/AppManager</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>exceptionTime</param-name>
+		<param-value>3</param-value>
+	</context-param>
+	<context-param>
+		<param-name>timeoutTime</param-name>
+		<param-value>15</param-value>
+	</context-param>
+	<context-param>
+		<param-name>runTestcaseResult</param-name>
+		<param-value>/home/molab/runTestcaseResult/</param-value>
+	</context-param>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
